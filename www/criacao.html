@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/verificationStyle.css" />
+    <script src="scripts/scripts.js"></script>
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <div class="login">
+                <div class="login-header">
+                    <h3>LOGIN</h3>
+                    <p>Please enter your credentials to login.</p>
+                </div>
+            </div>
+            <form id = "signUpType">
+                <label for="typeSelect">Tipo de conta</label>
+                <select id="typeSelect" name="typeSelect">
+                    <option value="company">Empresa</option>
+                    <option value="professional">Profissional</option>
+                </select>
+            </form>
+    
+            <br>
+    
+            <form id = "login-form">
+                <label for="email">Email</label>
+                <br>
+                <input id="email" name="email" type="text" required = "required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <br>
+                <label for="name">Nome</label>
+                <br>
+                <input id="name" name="name" type="text" required = "required">
+                <br>
+                <label for="password">Password</label>
+                <br>
+                <input id="password" name="password" type="password" required = "required" minlength="6">
+                <br>
+    
+                <!--Inserir emploeyType caso typeSelect = professional-->
+    
+                <input id="btnCreate" name="btnCreate" type="submit" value="Criar">
+                <input id="btnResest" name="btnResest" type="reset" value="Limpar">
+            </form>
+            <p class="message">Do You Have ab account? <a href="verificacao.html">Login</a></p>
+            <p class="message">Go Back? <a href="index.html">Back</a></p>                
+        </div>
+    </div>
+    <div id="employeeTypeContainer">
+        <label for="birthDate">Data nascimento</label>
+        <br>
+        <input type="date" name="birthDate" id="birthDate" required = "required" >
+        <br>
+
+        <label for="gerderSelect">Género</label>
+        <br>
+        <select name="gerderSelect" id="gerderSelect" style="width: 100%;">
+            <option value="I">Indefenido</option>
+            <option value="M">Masculino</option>
+            <option value="F">Feminino</option>
+        </select>
+        <br>
+
+        <label for="locality">Localidade</label>
+        <br>
+        <input type="text" placeholder="Paiz / Estado" name="locality" id="locality" required = "required" pattern="[a-z]/[a-z]" >
+        <br>
+
+        <label for="">Quer ser visivel por empresas?</label>
+        <br>
+        <div id="aux">
+            <label for="visabilaty">Sim</label>
+            <input type="radio" name="visabilaty" id="visabilatyY" value="1" required = "required">
+            <label for="visabilatyN">Não</label>
+            <input type="radio" name="visabilaty" id="visabilatyN" value="0" required = "required">
+        </div>
+        <br>
+    </div>
+</body>

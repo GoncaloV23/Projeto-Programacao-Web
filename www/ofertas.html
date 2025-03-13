@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Gestao de Portefolios" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="keywords"
+      content="Gestão de portefólios, PW,
+      Politecnico, Setubal, Projeto, Rui, Barroso, 202100299, Gonçalo, Vieira, 202100296, Francisco, Silva, 202100984"
+    />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <meta name="author" content="Rui Barroso, Gonçalo Vieira, Francisco Silva" />
+    <link rel="stylesheet" href="styles/genericStyle.css" />
+    <link rel="stylesheet" href="styles/table.css" />
+    <title>Port Manager - Curriculos</title>
+    
+  </head>
+  <body>  
+    <header>
+      <div id="title">
+        <img id="logo" src="images/ips-logo.png" alt="logotipo">
+        <h1>Port Manager</h1>
+      </div>
+      
+      <nav>
+        <ul id="menu">
+          <li id="dropdown"><button onclick="displayMenuItems()" class="dropbtn"><img id="dropdownLogo" src="images/Menu.webp" heigth="40px" width="40px" alt="dropdown Menu"></button></li>
+          <li class="menuItem"><a href="index.html">Introdução</a></li>
+          <li class="menuItem"><a href="gestaoportefolios.html">Portefólios</a></li>
+          <li class="menuItem"><a id="active" href="ofertas.html">Ofertas</a></li>
+          <li class="menuItem"><a href="sobrenos.html">Sobre nós</a></li>
+        </ul>
+      </nav>
+   </header>
+   
+    <main>
+      <article>
+        <h1>Ofertas de Emprego</h1>
+
+        <form>
+          <label>Ordenar</label>
+          <input type="radio" id="base" name="order">
+          <label for="base">Valor Base</label>
+          <input type="radio" id="data" name="order">
+          <label for="data">Data Validade</label>
+          <input type="checkbox" id="desc" name="desc">
+          <label for="desc"> Descendente</label>
+
+          <br>
+
+          <label for="min">Minimo</label>
+          <input type="range" name="min" id="min" value="0">
+          <label for="max">Maximo</label>
+          <input type="range" name="max" id="max" value="100">
+          <select name="areas" id="areas">
+            <option value="Programação">Programação</option>
+            <option value="Base de dados">Base de dados</option>
+            <option value="Gestão de sitemas">Gestão de sitemas</option>
+          </select>
+          <input type="button" id="btFilter" value="Filtrar">
+          <input type="reset" id="btReset" value="Limpar">
+        </form>
+
+
+        <div class="container" id="container">
+        <table id="table">
+          <thead>
+            <tr class="table100-head">
+              <th class="column1">Empresa</th>
+              <th class="column2">Área</th>
+              <th class="column3">Descrição</th>
+              <th class="column4">Duração</th>
+              <th class="column5">Valor</th>
+              <th class="column6">Validade</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <!--
+            <tr>
+            <td class="column1">Google</td>
+            <td class="column2">Programação</td>
+            <td class="column3">Desenvolvimento de software</td>
+            <td class="column4">4 anos</td>
+            <td class="column5">9500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+            <tr>
+            <td class="column1">Apple</td>
+            <td class="column2">Base de dados</td>
+            <td class="column3">Gestão de Dados</td>
+            <td class="column4">5 anos</td>
+            <td class="column5">8500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+            <tr>
+            <td class="column1">Microsoft</td>
+            <td class="column2">Gestão de Sistema</td>
+            <td class="column3">Manter e assegurar a boa utilização do sistema</td>
+            <td class="column4">2 anos</td>
+            <td class="column5">6500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+            <tr>
+            <td class="column1">Google</td>
+            <td class="column2">Programação</td>
+            <td class="column3">Desenvolvimento de software</td>
+            <td class="column4">4 anos</td>
+            <td class="column5">7500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+            <tr>
+            <td class="column1">Amazon</td>
+            <td class="column2">Base de dados</td>
+            <td class="column3">Gestão de Dados</td>
+            <td class="column4">3 anos</td>
+            <td class="column5">5500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+            <tr>
+            <td class="column1">Apple</td>
+            <td class="column2">Gestão de Sistema</td>
+            <td class="column3">Manter e assegurar a boa utilização do sistema</td>
+            <td class="column4">2 anos</td>
+            <td class="column5">3500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+            <tr>
+            <td class="column1">Microsoft</td>
+            <td class="column2">Programação</td>
+            <td class="column3">Desenvolvimento de software</td>
+            <td class="column4">9 anos</td>
+            <td class="column5">9500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+            <tr>
+            <td class="column1">Google</td>
+            <td class="column2">Base de dados</td>
+            <td class="column3">Gestão de Dados</td>
+            <td class="column4">6 anos</td>
+            <td class="column5">7500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+            <tr>
+            <td class="column1">Amazon</td>
+            <td class="column2">Gestão de Sistema</td>
+            <td class="column3">Manter e assegurar a boa utilização do sistema</td>
+            <td class="column4">5 anos</td>
+            <td class="column5">4500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+            <tr>
+            <td class="column1">Microsoft</td>
+            <td class="column2">Programação</td>
+            <td class="column3">Desenvolvimento de software</td>
+            <td class="column4">4 anos</td>
+            <td class="column5">5500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+            <tr>
+            <td class="column1">Google</td>
+            <td class="column2">Base de dados</td>
+            <td class="column3">Gestão de Dados</td>
+            <td class="column4">1 anos</td>
+            <td class="column5">4500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+            <tr>
+            <td class="column1">Microsoft</td>
+            <td class="column2">Gestão de Sistema</td>
+            <td class="column3">Manter e assegurar a boa utilização do sistema</td>
+            <td class="column4">3 anos</td>
+            <td class="column5">3500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+            <tr>
+            <td class="column1">Apple</td>
+            <td class="column2">Programação</td>
+            <td class="column3">Desenvolvimento de software</td>
+            <td class="column4">2 anos</td>
+            <td class="column5">4500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+            <tr>
+            <td class="column1">Amazon</td>
+            <td class="column2">Base de dados</td>
+            <td class="column3">Gestão de Dados</td>
+            <td class="column4">6 anos</td>
+            <td class="column5">2500€</td>
+            <td class="column6">11/12/2022</td>
+            </tr>
+          -->
+          </tbody>
+        </table>    
+        </div>
+      </article>
+    </main>
+    
+  </body>
+  
+</html>
+<script type="text/javascript" src="scripts/scripts.js"></script>
